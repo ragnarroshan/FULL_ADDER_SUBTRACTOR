@@ -43,13 +43,48 @@ Borrow out = A'Bin + A'B + BBin
 Write the detailed procedure here
 
 **Program:**
+```
+ Developed by:j kirthick roshan RegisterNumber:212223040097
+full adder
+module full_adder(a,b,cin,sum,carry);
+input a,b,cin;
+output sum,carry;
+wire w1,w2,w3,w4;       
+xor(w1,a,b);
+xor(sum,w1,cin);        
 
-/* Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+and(w2,a,b);
+and(w3,b,cin);
+and(w4,cin,a);
 
+or(carry,w2,w3,w4);
+endmodule
+
+
+full subtractor
+module full_subtracter(a,b,Bin,BO,DIFF);
+input a,b,Bin;
+output BO,DIFF;
+assign DIFF = a ^ b ^ Bin;
+  assign BO = (a & b) | ((a ^ b) & Bin);
+endmodule
+
+```
 **RTL Schematic**
+full adder
+![Screenshot 2024-03-24 230155](https://github.com/ragnarroshan/FULL_ADDER_SUBTRACTOR/assets/147474287/fb52249c-9a1a-4728-9e53-5033b298ede7)
+
+full subtractor
+
+![Screenshot 2024-03-24 230223](https://github.com/ragnarroshan/FULL_ADDER_SUBTRACTOR/assets/147474287/6e4e85c6-ca3e-4481-b77b-4b69d2b06161)
+
 
 **Output Timing Waveform**
+![Screenshot 2024-03-24 230252](https://github.com/ragnarroshan/FULL_ADDER_SUBTRACTOR/assets/147474287/e572b9db-9f31-4791-b031-0bb0220ebd65)
+
+![Screenshot 2024-03-24 230333](https://github.com/ragnarroshan/FULL_ADDER_SUBTRACTOR/assets/147474287/61e7778a-7544-49fe-9fe2-52b270a52d39)
+
+
 
 **Result:**
 
